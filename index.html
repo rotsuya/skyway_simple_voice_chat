@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Voice Chat on SkyWay</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="status-getting-local-audio">
+<nav class="navbar navbar-default navbar-static-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <span class="navbar-brand">Simple Voice Chat</span>
+        </div>
+    </div>
+</nav>
+<div class="container">
+    <div id="alertLocalAudio" class="alert alert-danger">
+        マイクにアクセスできません。ブラウザで利用を許可して、再読み込みしてください。
+        <button class="btn btn-default" id="buttonLocalAudioRetry">再読み込み</button>
+    </div>
+    <div id="warnLocalAudio" class="alert alert-warning">
+        <p>マイクの利用を許可してください。</p>
+    </div>
+
+    <div class="form-group">
+        <label for="myId">あなたのID</label>
+        <input type="text" id="myId" class="form-control" readonly value="...">
+    </div>
+
+    <div class="ui-call form-group">
+        <label for="theirIds">接続先のID</label>
+        <select id="theirIds" class="form-control" name="contact"></select>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-offset-4 col-sm-4">
+            <div class="ui-call form-group">
+                <button class="ui-call btn btn-success btn-block" id="buttonCall">接続</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="ui-close form-group">
+        <label for="theirId">接続中のID</label>
+        <input type="text" id="theirId" class="ui-close form-control" readonly value="...">
+    </div>
+
+    <div class="row">
+        <div class="col-sm-offset-4 col-sm-4">
+            <div class="ui-close form-group">
+                <button class="ui-close btn btn-danger btn-block" id="buttonClose">終了</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<audio id="myAudio" muted="true" autoplay></audio>
+
+<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+<script src="https://skyway.io/dist/0.3/peer.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>

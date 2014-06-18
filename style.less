@@ -1,0 +1,52 @@
+html {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    height: 100%;
+}
+
+#theirAudio {
+    position: absolute;
+    width: 0;
+    height: 0;
+    top: 0;
+    left: 0;
+    visibility: hidden;
+}
+
+.navbar {
+    opacity: 0.8;
+}
+
+.status-getting-local-audio {
+    .ui-call {
+        display: none !important;
+    }
+    .ui-close {
+        display: none !important;
+    }
+}
+
+.status-waiting-for-call {
+    #warnLocalAudio {
+        display: none;
+    }
+    .ui-close {
+        display: none !important;
+    }
+}
+
+.status-calling {
+    #warnLocalAudio {
+        display: none;
+    }
+    .ui-call {
+        display: none !important;
+    }
+}
+
+#alertLocalAudio {
+    display: none;
+}
